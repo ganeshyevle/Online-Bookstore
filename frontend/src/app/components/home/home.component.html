@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+    body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #f0f0f0;
+    }
+
+    header {
+        background-color: #EF3A5D;
+        color: #fff;
+        padding: 20px 0;
+        height: 100px;
+        margin-top: -10px;
+    }
+
+    nav {
+        background-color: #EF3A5D;
+        color: #fff;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        justify-items: center;
+        margin: 0px;
+    }
+
+    nav .left-menu {
+        display: flex;
+        align-items: center;
+    }
+
+    nav .left-menu h1 {
+        width: 420px;
+        font-size: 30px;
+        height: auto;
+        margin-right: 90px;
+
+    }
+
+    nav .left-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav .left-menu ul li {
+        display: inline;
+        margin-right: 20px;
+    }
+
+    nav .left-menu a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    nav .right-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav .right-menu ul li {
+        display: inline;
+        margin-right: 20px;
+    }
+
+    nav .right-menu a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    nav .left-menu a:hover,
+    nav .right-menu a:hover {
+        color: #F5A623;
+    }
+
+    .hero {
+        background-image: url('https://images.pexels.com/photos/10819256/pexels-photo-10819256.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+        padding: 100px 0;
+        color: #ffffff;
+        margin-top: 0px;
+        height: 599px;
+        position: relative;
+    }
+
+
+    .hero::before {
+        content: "";
+        background: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+        margin-left: 385px;
+        margin-top: 40px;
+        position: absolute;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        margin-top: 10px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .hero .cta-button {
+        display: inline-block;
+        background-color: #EF3A5D;
+        color: #ffffff;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        margin-top: 110px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .hero .cta-button:hover {
+        background-color: #555;
+    }
+
+    .featured-books {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #books {
+        height: 640px;
+    }
+
+    .book {
+        background-color: #ffffff;
+        padding: 45px;
+        margin: 30px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        width: 260px;
+        text-align: center;
+        border-radius: 5px;
+        height: 455px;
+        border: 2px solid #EF3A5D;
+        flex-grow: 0.1;
+    }
+
+    .top-Featured-Books h2 {
+        text-align: center;
+        margin: 20px 0;
+        font-size: 2rem;
+    }
+
+    .top-Featured-Books h2::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 3px;
+        background-color: #EF3A5D;
+        transition: width 200ms ease-in-out;
+        margin-left: 590px;
+        margin-top: 10px;
+    }
+
+    .top-Featured-Books h2:hover::after {
+        width: 21%;
+
+    }
+
+    .book img {
+        max-width: 190%;
+        height: 190px;
+
+    }
+
+    .book h3 {
+        font-size: 1.2rem;
+        margin: 10px 0;
+        color: #EF3A5D;
+    }
+
+    .book p {
+        font-size: 1rem;
+        margin: 10px 0;
+    }
+
+    .cta-button {
+        display: inline-block;
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: background-color 0.3s, box-shadow 0.3s;
+        margin-top: 10px;
+    }
+
+    .cta-button:hover {
+        background-color: #EF3A5D;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.2), 0 0 30px rgba(0, 0, 0, 0.2);
+        color: rgba(255, 255, 255, 1);
+    }
+
+    .categories {
+        background-color: #f9f9f9;
+        padding: 0px 0;
+        text-align: center;
+    }
+
+    .category img {
+        max-width: 190%;
+        height: 190px;
+    }
+
+    .category-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .category {
+        background-color: #ffffff;
+        padding: 45px;
+        margin: 30px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        width: 260px;
+        text-align: center;
+        border-radius: 5px;
+        height: 490px;
+        border: 2px solid #EF3A5D;
+        flex-grow: 0.1;
+    }
+
+    .category a {
+        text-decoration: none;
+        color: #EF3A5D;
+        margin: 10px;
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    .category p {
+        margin-top: 20px;
+        font-size: 1rem;
+    }
+
+    .categories h2 {
+        text-align: center;
+        margin: 20px 0;
+        font-size: 2rem;
+        border-bottom: 2px solid transparent;
+        transition: border-color 0.3s;
+    }
+
+    .categories h2::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 3px;
+        background-color: #EF3A5D;
+        transition: width 200ms ease-in-out;
+        margin-left: 630px;
+        margin-top: 10px;
+    }
+
+    .categories h2:hover::after {
+        width: 15%;
+    }
+
+    .contact {
+        text-align: center;
+        padding: 50px 0;
+    }
+
+    .contact h2 {
+        text-align: center;
+        margin: 20px 0;
+        font-size: 2rem;
+        border-bottom: 2px solid transparent;
+        transition: border-color 0.3s;
+    }
+
+    .contact h2::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 3px;
+        background-color: #EF3A5D;
+        transition: width 200ms ease-in-out;
+        margin-left: 630px;
+        margin-top: 10px;
+    }
+
+    .contact h2:hover::after {
+        width: 15%;
+    }
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Bookstore</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left-menu">
+                <h1>Online Bookstore</h1>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#books">Books</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="right-menu">
+                <ul>
+                    <li><a href="/add">Sign Up</a></li>
+                    <li><a href="#signin">Sign In</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <img src="" alt="">
+        <div class="hero-h2-p">
+            <h1>Welcome to the Online Bookstore</h1>
+            <p>Discover a world of books at your fingertips.</p>
+        </div>
+        <a href="#books" class="cta-button">Explore Books</a>
+    </section>
+
+    <section id="books">
+        <div class="top-Featured-Books">
+            <h2>Featured Books</h2>
+        </div>
+        <div class="featured-books">
+            <div class="book">
+                <img src="https://cdn2.penguin.com.au/covers/original/9781786330895.jpg" alt="Book 1">
+                <h3>Book Title 1</h3>
+                <p>Author: Author Name</p>
+                <p>Price: $19.99</p>
+                <a href="#" class="cta-button">Add to Cart</a>
+            </div>
+
+            <div class="book">
+                <img src="https://cdn2.penguin.com.au/covers/original/9781786330895.jpg" alt="Book 2">
+                <h3>Book Title 2</h3>
+                <p>Author: Author Name</p>
+                <p>Price: $14.99</p>
+                <a href="#" class="cta-button">Add to Cart</a>
+            </div>
+
+            <div class="book">
+                <img src="https://cdn2.penguin.com.au/covers/original/9781786330895.jpg" alt="Book 3">
+                <h3>Book Title 3</h3>
+                <p>Author: Author Name</p>
+                <p>Price: $24.99</p>
+                <a href="#" class="cta-button">Add to Cart</a>
+            </div>
+
+            <div class="book">
+                <img src="https://cdn2.penguin.com.au/covers/original/9781786330895.jpg" alt="Book 4">
+                <h3>Book Title 4</h3>
+                <p>Author: Author Name</p>
+                <p>Price: $29.99</p>
+                <a href="#" class="cta-button">Add to Cart</a>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="categories" class="categories">
+        <h2>Categories</h2>
+        <div class="category-list">
+            <div class="category">
+
+                <a href="#category-fiction">Fiction</a>
+                <img src="https://i.pinimg.com/originals/da/20/b2/da20b22fe0f8413dbcfbc25642322081.jpg" alt="Book 1">
+                <p>Explore a world of imagination and storytelling in the fiction category.</p>
+            </div>
+            <div class="category">
+
+                <a href="#category-mystery">Mystery</a>
+                <img src="https://cdn2.penguin.com.au/covers/original/9781786330895.jpg" alt="Book 2">
+                <p>Unravel thrilling mysteries and suspenseful plots in the mystery category.</p>
+            </div>
+            <div class="category">
+
+                <a href="#category-scifi">Science Fiction</a>
+                <img src="https://cdn2.penguin.com.au/covers/original/9781786330895.jpg" alt="Book 3">
+                <p>Experience futuristic worlds and scientific adventures in the science fiction category.</p>
+            </div>
+            <div class="category">
+                <a href="#category-fantasy">Fantasy</a>
+                <img src="https://cdn2.penguin.com.au/covers/original/9781786330895.jpg" alt="Book 4">
+                <p>Journey into magical realms and mythical adventures in the fantasy category.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need assistance, please feel free to contact us:</p>
+        <a href="mailto:info@onlinebookstore.com" class="cta-button">Email Us</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Online Bookstore. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
